@@ -1,40 +1,55 @@
-package org.example.springrestv2.controller;
+package org.example.springrestv2.model;
 
-import org.example.springrestv2.model.Product;
-import org.example.springrestv2.model.ProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+//jpa annotations
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
 
-import java.util.List;
-
-@RestController
-/*
- * Controller annotation can be used to create web application
- * RestController is a combination of Controller and ResponseEntity
- */
-public class ProductController {
-    @Autowired
-     ProductRepository productrep;
+public class Product {
     /*
-     * GetMapping-retreive the data
-     * PostMapping--insert the data
-     * PutMapping-update the data
-     * DeleteMapping-Delete the data
-     */
-    @GetMapping("/retreiveProduct")
-    public List<Product> getProductList()
-    {
-        return productrep.findAll();
+     * Productid: maps into db table
+     * productname, price, quantity: column db column
+     * */
+    @Id
+    @Column(name="Productid")
+    private int productid;
+    @Column(name="Productname")
+    private String productname;
+    @Column(name="Price")
+    private double price;
+    @Column(name="Quantity")
+    private int quantity;
+    public int getProductid() {
 
+        return productid;
     }
-    @PostMapping("/insertProduct")
-    public Product insertData(@RequestBody Product p)
-    {
-        return productrep.save(p);
 
+//getter & setters: Product,productname, price, quantity
+    public void setProductid(int productid) {
+
+        this.productid = productid;
+    }
+    public String getProductname() {
+        
+        return productname;
+    }
+    public void setProductname(String productname) {
+
+        this.productname = productname;
+    }
+    public double getPrice() {
+
+        return price;
+    }
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    public int getQuantity() {
+
+        return quantity;
+    }
+    public void setQuantity(int quantity) {
+
+        this.quantity = quantity;
     }
 
 }
