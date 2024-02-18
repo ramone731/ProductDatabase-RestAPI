@@ -1,6 +1,6 @@
-Technologies Used: IntelliJ IDEA Ultimate (Spring Initializer)
+Technologies Used: IntelliJ IDEA Ultimate (Spring Initializer), 
 Backend: Spring Boot, JPA (Hibernate)
-Database: MySQL
+Database:  MySQL Server 8.3, MySQL Shell 8.3, MySQL Workbench 8.0 CE
 Development Environments: IntelliJ IDEA Ultimate, Visual Studio Code (optional)
 API Client: Postman (other tools also compatible)
 
